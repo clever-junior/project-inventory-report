@@ -24,9 +24,10 @@ class Inventory:
             case _:
                 raise ValueError("Arquivo inválido")
 
-        if tipo_de_relatorio == "simples":
-            return SimpleReport.generate(produtos)
-        elif tipo_de_relatorio == "completo":
-            return CompleteReport.generate(produtos)
-        else:
-            raise ValueError("Tipo de relatório inválido")
+        match tipo_de_relatorio:
+            case "simples":
+                return SimpleReport.generate(produtos)
+            case "completo":
+                return CompleteReport.generate(produtos)
+            case _:
+                raise ValueError("Tipo de relatório inválido")
