@@ -1,9 +1,6 @@
-import pytest
-
 from inventory_report.inventory.product import Product
 
 
-@pytest.mark.xfail
 def test_relatorio_produto():
     nome_da_empresa = "Cafes Nature"
     nome_do_produto = "Cafe"
@@ -14,8 +11,8 @@ def test_relatorio_produto():
 
     produto = Product(
         id,
-        nome_da_empresa,
         nome_do_produto,
+        nome_da_empresa,
         data_de_fabricacao,
         data_de_validade,
         numero_de_serie,
